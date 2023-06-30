@@ -1,0 +1,161 @@
+\documentclass[12pt]{article}
+\usepackage[right=1.25in,left=1.25in,top=1.1in,bottom=1.1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks, citecolor=blue, filecolor=blue, linkcolor=blue, urlcolor=blue}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage[round]{natbib}
+\usepackage{amsmath,amsthm} 
+\usepackage{engord}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\pgfplotsset{every axis label/.append style={font=\tiny}}
+\usepackage[labelsep=period]{caption} %% This switches "Table 1: Title" to "Table 1. Title"
+
+\usepackage{amssymb} %% Necessary, just for the \checkmark command  in tables.
+\usepackage{multirow} %% Necessary if we are doing tables in LaTeX
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xr}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{sectsty}
+\sectionfont{\large}
+\subsectionfont{\normalsize}
+\subsubsectionfont{\normalsize}
+
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{ \vspace*{-2.5cm} \hspace*{-0.5cm}Debt Ceiling Brinkmanship and Global Financial Diversification}
+% \footnote{
+%We are grateful to a first colleague,a second colleague, Tal Gross, No pressure!a fourth colleague, a last colleague,and seminar participants at one university, a second university, and a conferencefor useful feedback. }}
+
+\author{William\thanks{University of British Columbia.
+\href{mailto:TK@TK.edu}{wco@student.ubc.ca}}} 
+%\and Author Two\thanks{TK University and NBER.  \href{mailto:TK@TK.edu}{TK@TK.edu}} 
+%\and Author Three\thanks{TK University. \href{mailto:TK@TK.edu}{TK@TK.edu}}}
+
+\date{ \vspace*{0.5cm} May, 2023\\
+%\textbf{Preliminary and Incomplete. \\ Please do not cite or circulate.}
+} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%\nocite{*}
+\bgroup
+\let\footnoterule\relax
+
+\begin{singlespace}
+\maketitle
+
+
+\begin{abstract}
+    \noindent Below is an attached research proposal. It starts with an introduction. Followed by relevant data sets along with proposed methodology. Lastly, a game theory model of debt ceiling brinkmanship is proposed. 
+\end{abstract}
+\end{singlespace}
+\thispagestyle{empty}
+
+\clearpage
+\egroup
+\setcounter{page}{1}
+
+%% Temporary tool to track how this paper is structured. Feel free to comment in or out. 
+% \tableofcontents
+% \bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%\section{Introduction\label{sec:introduction}}
+\section{Previously 
+\label{sec:Previously}}
+Previously, we discussed some points for improvement. Mainly, what exactly is a risk free rate and weather debt ceiling brinkmanship is a random process. We also noted to consider ex ante situations in contrast to ex post debt ceiling raises. The sections below consist of additions that incorporate feedback and improvements. 
+\section{Introduction 
+\label{sec:Introduction}}
+It is well established that in times of uncertainty, demand for US dollar denominated assets increase. This is so because the US has a history of being a safe haven for asset. What challenges this notion is the constant US debt ceiling brinkmanship. We investigate if parties internalize US debt ceiling brinkmanship risk. 
+
+\section{Dataset 
+\label{sec:Dataset}}
+We introduce a comprehensive IMF COFER data. 
+This would allow us to run a regression that differentiates between advanced and developing economies. 
+
+$$\Delta_{UsdShare,t}=\beta_0+\beta_1*D_{Debt Ceiling,t-1}+\beta_2*D_{CeilingSuspension,t-1}\beta_3 *D_{Advanced,t-1}+ \beta_4 *D_{Emerging/Developing,t-1}$$
+
+We are able to make use of the aggregate world currency apply it to our existing regressions and charts. 
+
+
+
+\section{Model 
+\label{sec:Model}}
+The long run model stays the same. Given a long enough time horizon, both parties have internalize all preferences and reservations. 
+\setlength{\extrarowheight}{2pt}
+\setlength{\extrarowheight}{2pt}
+\begin{table}[htbp]
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{cc|c|c|}
+        & \multicolumn{1}{c}{} & \multicolumn{2}{c}{Party $R$} \\
+        & \multicolumn{1}{c}{} & \multicolumn{1}{c}{$Raise$} & \multicolumn{1}{c}{$Not Raise$} \\\cline{3-4}
+        \multirow{2}*{Party $L$} & $Raise$ &  $(1/2*Y,1/2*Y,S)$ & $(1/2*Y-C_d,1/2*Y-C_d,S-C_d)$ \\\cline{3-4}
+        & $Not Raise$ & $(1/2*Y-C_d,1/2*Y-C_d,S-C_d)$ & $(1/2*Y-C_b,1/2*Y-C_b,S-C_b ) $ \\\cline{3-4}
+    \end{tabular}
+    }
+    \caption{Game Theory Table}
+    \label{tab:game_theory}
+\end{table} 
+
+
+. \textbf{This suggest that in the long run, assuming no future shocks occur, diversification is unnecessary.} \\
+
+
+
+\noindent $\ast$ We consider the short run wherein $P_i$ will always first proposes $\pi_i=1/2*Y+\epsilon_i$, where $\epsilon_i$ represents some random positive markup. This is the case because $$\mathbb{E}[\pi_i]=\sigma*(1/2*Y+\epsilon_i)+(1-\sigma)*(1/2*Y)$$where $\sigma$ represents the probability of $P_{-i}$ accepting the deal with markup, $\epsilon_i$. We assume $\sigma\approx 0.00001$ such that $$\mathbb{E}[\pi_i]>1/2*Y$$ Likewise, $P_{-i}$ follows a similar strategy. Given this both parties proposals results in $$Y<1/2*Y+\epsilon_r+1/2*Y+\epsilon_d$$This of course is impossible as such parties will always reject in the short run. Following the argument from earlier, if a proposal is rejected the maximum payoff must be$$\pi_{i,pass}=1/2*Y-C_d+\lambda_i , \forall i \in \{l,r\}$$ where $\lambda_i$ represents a positive payoff from party constituents. If both parties reject proposals to default, maximum payoff would be $$\pi_{i,default}=1/2*Y-C_b+\lambda_i, \forall i \in \{l,r\}$$ Because $C_b>C_d$ then $$\pi_{i,pass}>\pi_{i,default} , \forall i \in \{l,r\}$$
+Given this both parties will always reject the first proposal but will always accept future proposals. We know consider total welfare. $$W_{with}=Y-2C_d+2\lambda_i+S=2*\pi_{i,pass}+S$$
+$$W_{without}=Y-C_{ins}+S$$We know $C_{ins}>C_d$ Furthermore, intuitively $C_{ins}>2*C_d$. Then, suppose $C_{ins}=2*C_d+\theta$ where $\theta$ represents some markup. Then,  $$W_{with}=Y-2C_d+2\lambda_i+S=2*\pi_{i,pass}+S$$
+$$ W_{without}=Y-2C_d-\theta+S$$ We know $2* \lambda_i+\theta>0$. Therefore,
+$$W_{with}>W_{without}$$ This suggest the debt ceiling brinkmanship is welfare optimal in the short run as well and therefore \textbf{ there should be no financial diversification associated with brinkmanship, in the short run and the long run.} This will be verified with our data sets. 
+
+\section{Literature 
+\label{sec:Literature}}
+Related work has been done on said topic. Herrera explores US debt ceiling brinkmanship as a stochastic process \citep{Herrera1}. Aye's work not only takes into account debt ceiling, but also governments shutdowns in forecasting US risk premium\citep{Aye}. Another paper from Herrera analyzes brinkmanship from a simpler "do or die" situation\citep{Herrera2}. 
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\begin{singlespace}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{chicago}
+\bibliographystyle{aer}
+\bibliography{our-cites.bib}
+\end{singlespace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% These commands start the appendix and change the Table & Figure numbering
+\newpage
+\appendix
+\setcounter{table}{0}
+\renewcommand{\tablename}{Appendix Table}
+\renewcommand{\figurename}{Appendix Figure}
+\renewcommand{\thetable}{A\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
